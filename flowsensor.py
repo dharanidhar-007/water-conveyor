@@ -18,7 +18,9 @@ def countPulse(channel):
       count = count+1
 
 GPIO.add_event_detect(FLOW_SENSOR_GPIO, GPIO.FALLING, callback=countPulse)
-
+k=0
+kk[]
+person=0
 while True:
     try:
         start_counter = 1
@@ -26,15 +28,20 @@ while True:
         start_counter = 0
         flow = ((count * 10000) / 450)
         # Pulse frequency (Hz) = 7.5Q, Q is flow rate in L/min.
-        print("The flow is: %.2f ml/sec" % (flow))
+        #print("The flow is: %.2f ml/sec" % (flow))
         if flow > 0.00:
             i = int(start_counter)
             j = int(count)
             n = int(i+j)
-            k = int((flow + flow) / n)
-            print("The water consumed by the person is : %.2f" % (k))
+            k += int((flow + flow) / n)
+            #print("The water consumed by the person is : %.2f" % (k))
+            print("Person",person,"Drank :",k)
         else:
-            print("The water consumed by the person is : %.2f" % (flow))
+            kk.append(k)
+            if int(k)==0:
+               person+=1
+            k=0
+            #print("The water consumed by the person is : %.2f" % (flow))
 
         #publish.single("/Garden.Pi/WaterFlow", flow, hostname=MQTT_SERVER)
         count = 0
