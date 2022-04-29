@@ -1,0 +1,81 @@
+WindowManager:
+    MainWindow:
+    SecondWindow:
+    ThirdWindow:
+
+<Label>
+    background_color: (1,0.5,0.6,1)
+    font_size: 30
+<Button>
+    background_color: (1,0,0,1)
+<MainWindow>:
+    name: "main"
+    BoxLayout:
+        BoxLayout:
+            orientation: "vertical"
+            size: root.width,root.height
+            spacing:10
+            padding:40
+            Button:
+                text: "New User"
+                on_release:
+                    app.root.current = "second"
+                    root.manager.transition.direction = 'left'
+
+            Button:
+                text: "Already Registered"
+                on_release:
+                    app.root.current = "third"
+                    root.manager.transition.direction = 'up'
+<SecondWindow>:
+    name: "second"
+    BoxLayout:
+        namee:namee
+
+        orientation: "vertical"
+        size: root.width,root.height
+        spacing:10
+        padding:40
+        Label:
+            text: "Name"
+        TextInput:
+            id: namee
+            multiline: False
+
+        Button:
+            text: "Sumbit"
+            on_press: root.press()
+            on_release:
+                app.root.current = "third"
+
+                root.manager.transition.direction = 'left'
+
+        Button:
+            text: "Already Registered"
+            background_color:(1,0,0,1)
+            on_release:
+                app.root.current = "third"
+                root.manager.transition.direction = 'left'
+
+
+<ThirdWindow>:
+    name: "third"
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width,root.height
+        spacing:10
+        padding:40
+        Label:
+            text: "Show your face"
+        Button:
+            text:"Finish"
+            on_press: root.press()
+        Button:
+            text:"Add Another User"
+            on_release:
+                app.root.current = "second"
+                root.manager.transition.direction = 'right'
+
+
+
+

@@ -1,0 +1,55 @@
+<MyGridLayout>:
+    name:name
+    food:food
+    GridLayout:
+        cols: 1
+        size: root.width, root.height
+        GridLayout:
+            cols: 2
+
+            Label:
+                text: "Name"
+            TextInput:
+                id: name
+                multiline: False
+            Label:
+                text: "Food"
+            TextInput:
+                id: food
+                multiline: False
+        Button:
+            text: "Submit"
+            font_size: 30
+            background_normal: ""
+            #background_color: (1,0,0.5,1)
+            background_color:("#eefa00")
+            on_press: root.press()
+
+
+
+box
+...<Label>
+    background_color: (1,0.5,0.6,1)
+    font_size: 30
+<Button>
+    background_color: (1,0,0,1)
+<MyBoxLayout>
+    name:name
+    BoxLayout:
+        orientation: "vertical"
+        size: root.width,root.height
+        spacing:10
+        padding:40
+        Label:
+            text: "Name"
+        TextInput:
+            id: name
+            #multiline: False
+
+        Button:
+            text: "Sumbit"
+            on_press: root.press()
+        Button:
+            text: "Clear"
+            background_color:(1,0,0,1)
+            on_press: root.clear()...
