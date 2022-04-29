@@ -10,7 +10,7 @@ sudo pip install -r requirements
 python Project.py
 ```
 ```javascript
-python waterflow.py
+python flowsensor.py
 ```
 
 The above command installs the requirments and runs the code.
