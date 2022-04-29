@@ -28,8 +28,8 @@ while True:
         # Pulse frequency (Hz) = 7.5Q, Q is flow rate in L/min.
         print("The flow is: %.2f ml/sec" % (flow))
         if flow > 0.00:
-            i = int(count)
-            j = int(count + 1)
+            i = int(start_counter)
+            j = int(count)
             n = int(i+j)
             k = int((flow + flow) / n)
             print("The water consumed by the person is : %.2f" % (k))
