@@ -38,7 +38,7 @@ while True:
             print("Person",person,"Drank :",k)
         else:
             kk.append(k)
-            if int(k)==0:
+            if int(k)!=0:
                person+=1
             k=0
             #print("The water consumed by the person is : %.2f" % (flow))
